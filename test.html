@@ -770,18 +770,7 @@
 
 		document.addEventListener('click', function(e){
 			// console.log(nval)
-			if(open){
-				let _target = e.target
-				// let link = e.target.nodeName
-				while(_target && _target.id != "responsive-nav" && _target.id != "ace-menu" && !search(arr, _target.href) ){
-					_target = _target.parentElement;
-				}
-				if (!_target) {
-					let menu = document.getElementById("ace-menu");
-					menu.click();
-					// console.log(menu);
-				}
-			}
+			$acenavclose();
 		});
 
 		/* for (let i = 0; i < ace_search.length; i++) {
