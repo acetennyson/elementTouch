@@ -140,7 +140,7 @@
             
             
 				<!-- responsive-nav -->
-				<div id="responsive-nav" class="ace-color-g1">
+				<div id="responsive-nav ace-nav" class="ace-color-g1">
 					<!-- NAV -->
 					<ul class="mx-4 main-nav navbar-nav navbar-expand-lg">
                     <li class="nav-item "><a class="nav-link" href="home">Home</a></li> <li class="nav-item "><a class="nav-link" href="shop">Shop</a></li>
@@ -742,6 +742,98 @@
 	<script src="http://goldensales.epizy.com/gashouse/js/jquery.zoom.min.js"></script>
 	<script src="http://acelub.epizy.com/js/main.js"></script>
 	<script src="js/index.js"></script>
+	    
+	 <script>
+		var c = 0;
+		var open = false;
+		// const ace_search = document.querySelectorAll(".ace-search");
+		var arr = ["product", "#", "javascript::void"];
+
+		document.querySelector("#ace-search").addEventListener('input',(e)=>{
+			console.log(e);
+			// e.target.title = e.target.value;
+			const me = e.target;
+			x = me.value; 
+			// document.querySelector('#tooltipp').innerHTML = x;
+			me.blur();
+			me.setAttribute("data-bs-original-title", x);
+			setTimeout(()=>{
+				me.focus()
+			}, 10);
+		});
+
+		searchpopover();
+		 
+// 		 The code           //
+// 		 The code           //
+// 		 The code           //
+
+		document.addEventListener('click', function(e){
+			// console.log(nval)
+			if(open){
+				let _target = e.target
+				// let link = e.target.nodeName
+				while(_target && _target.id != "responsive-nav" && _target.id != "ace-menu" && !search(arr, _target.href) ){
+					_target = _target.parentElement;
+				}
+				if (!_target) {
+					let menu = document.getElementById("ace-menu");
+					menu.click();
+					// console.log(menu);
+				}
+			}
+		});
+
+		/* for (let i = 0; i < ace_search.length; i++) {
+			
+			ace_search[i].addEventListener('input',(e)=>{
+				console.log(e);
+				// e.target.title = e.target.value;
+				const me = e.target;
+				x = me.value; 
+				document.querySelector('#tooltipp').innerHTML = x;
+				me.blur();
+				me.setAttribute("data-bs-original-title", x);
+				setTimeout(()=>{
+					me.focus()
+				}, 50);
+			});
+		} */
+
+		
+		function search(arr, link){
+			if(!link || link=="") return false;
+			for (let x of arr) {
+				console.log(x);
+				let i = link.indexOf(x);
+				if(i!=-1) return true;
+			}
+			return false;
+		}
+		
+		// Initialize tooltips
+		function searchpopover() {
+			var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+			var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+			return new bootstrap.Popover(popoverTriggerEl)
+			})
+		}
+
+        function menu(){
+			if(c % 2 == 0) {
+				document.querySelector('.cont_drobpdown_menu').className = "cont_drobpdown_menu active";    
+				document.querySelector('.cont_icon_trg').className = "cont_icon_trg active";    
+				c++; 
+			}else{
+				document.querySelector('.cont_drobpdown_menu').className = "cont_drobpdown_menu disable";        
+				document.querySelector('.cont_icon_trg').className = "cont_icon_trg disable";        
+				c++;
+			}
+        }
+		
+		
+		
+	</script>
 	
 	
 	
