@@ -1,8 +1,8 @@
 ({
-  window._acenavopen = false;
+  a._acenavopen = false;
   
   $acenavclose = function(){
-    if(window._acenavopen){
+    if(a._acenavopen){
       let _target = e.target;
     //let link = e.target.nodeName;
       while(_target && _target.id != "ace-nav" && _target.id != "ace-menu" && !$acehref(_target.href) ){
@@ -25,4 +25,4 @@
 		}
 		return false;
 	}
-})();
+})(a);
