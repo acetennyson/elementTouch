@@ -134,7 +134,7 @@ class TW_Manager{
     }
     
     init(){
-        elt = document.querySelectorAll("."+this.classname); //overwrite to get diff class
+        this.elt = document.querySelectorAll("."+this.classname); //overwrite to get diff class
 
         this.elt.forEach(element => {
             this.data.push(new TypeWriter({
