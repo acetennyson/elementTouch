@@ -187,4 +187,3 @@ class TW_Manager{
         });
     }
 }
-var ace = new TW_Manager({speed: 80});
