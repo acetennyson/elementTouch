@@ -27,16 +27,18 @@ class TypeWriter{
     delay = 0;
     speed = 50;
     content = "";
+    isContinuous = false;
 
     /**
      * 
-     * @param {{elt: HTMLElement, speed: number}} param 
+     * @param {{elt: HTMLElement, speed: number|undefined, isContinuous: Boolean|undefined}} param 
      */
     constructor(param){
         // console.log(param)
         if(!param.elt) throw("Element for typewriting missing");
         this.elt = param.elt;
-        this.speed = param.speed;
+        this.speed = param.speed?param.speed:this.speed;
+        this.isContinuous = param.isContinuous?param.isContinuous:this.isContinuous;
         this.refresh();
         this.elt.textContent = "";
         this.init();
@@ -65,6 +67,7 @@ class TypeWriter{
         this.speed = (this.elt.dataset?.speed)?Number(this.elt.dataset.speed):this.speed;
         this.delay = (this.elt.dataset?.delay)?Number(this.elt.dataset.delay):this.delay;
         this.content = (this.elt.dataset?.content)?String(this.elt.dataset.content):this.elt.textContent;
+        this.isContinuous = (this.elt.dataset?.cts)?Boolean(this.elt.dataset.cts):this.isContinuous;
     }
 
     typewrite(){
@@ -124,15 +127,19 @@ class TW_Manager{
     body = document.body;
     // bounded = this.bound;
 
+    /**
+     * @param {{class: string|undefined, body:HTMLElement|undefined, speed: number|undefined, isContinuous:Boolean|undefined}} param
+    */
     constructor(param){
         if(param){
             this.classname = (param.class)?param.class:this.classname;
             this.body = (param.body)?param.body:this.body;
             this.speed = (param.speed)?param.speed:this.speed;
+            this.isContinuous = param.isContinuous?param.isContinuous:true;
         }
         this.init();
     }
-    
+
     init(){
         this.elt = document.querySelectorAll("."+this.classname); //overwrite to get diff class
 
@@ -140,6 +147,7 @@ class TW_Manager{
             this.data.push(new TypeWriter({
                 elt: element,
                 speed: this.speed,
+                isContinuous: this.isContinuous
             }));
         });
 
@@ -175,14 +183,14 @@ class TW_Manager{
             if(! (element instanceof TypeWriter)) return;
             let elt = element.elt,
             eltbound = bound(elt, 10);
-            
+
             if( (bodybound.y2>eltbound.y1) && (eltbound.y2 > bodybound.y1) ) {
                 if(!element.playing){
                     element.playing = true; 
                     element.typewrite();
                 }
             }else{
-                element.pause();
+                if(!element.isContinuous) element.pause();
             }
         });
     }
