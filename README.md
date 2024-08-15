@@ -1,8 +1,5 @@
 
-# typewriter.js
-
-the parameters needed for the typewriter are;
-    speed: a number that determines the time difference (in milliseconds) between each letter
+### typewriter.js
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://khaki-parrot-419042.hostingersite.com/iamsupreme/typewriter/screenshot/example.png">
