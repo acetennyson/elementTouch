@@ -52,6 +52,14 @@ class TypeWriter{
         this.elt.ontouchend = this.clear_speedup.bind(this)
     }
 
+    disinit(){
+        this.elt.onmousedown = null
+        this.elt.onmouseup = null
+
+        this.elt.ontouchstart = null
+        this.elt.ontouchend = null
+    }
+
     speedup(){
         this.downInterval = setInterval(
         ()=>{
@@ -67,20 +75,21 @@ class TypeWriter{
         this.speed = (this.elt.dataset?.speed)?Number(this.elt.dataset.speed):this.speed;
         this.delay = (this.elt.dataset?.delay)?Number(this.elt.dataset.delay):this.delay;
         this.content = (this.elt.dataset?.content)?String(this.elt.dataset.content):this.elt.textContent;
-        this.isContinuous = (this.elt.dataset?.cts)?Boolean(this.elt.dataset.cts):this.isContinuous;
+        this.isContinuous = (!!this.elt.dataset?.cts)?true:this.isContinuous;
     }
 
     typewrite(){
         // console.log(this.loaded, this.playing)
         if(!this.playing || this.ended) {this.clear_speedup();return};
         if(this.index==0){
-            setTimeout(this.animate.bind(this), this.delay)
+            this.dOut = setTimeout(this.animate.bind(this), this.delay)
         }else{
             this.animate();
         }
     }
 
     animate(){
+        if(this.dOut) delete this.dOut;
         this.playing = true;
         if (this.index < this.content.length) {
             this.elt.textContent += this.content.charAt(this.index);
@@ -100,12 +109,7 @@ class TypeWriter{
 
         this.elt.classList.remove('no-select', 'user-select-none');
 
-        this.elt.onmousedown = null
-        this.elt.onmouseup = null
-
-        this.elt.ontouchstart = null
-        this.elt.ontouchend = null
-        // if(this.callback) this.callback();
+        this.disinit();
     }
     /**
      * @param {Function} cb
@@ -115,7 +119,21 @@ class TypeWriter{
     }
 
     pause(){
+        if(this.dOut) {clearTimeout(this.dOut); delete this.dOut;}
         this.playing = false;
+    }
+
+    reset(){
+        this.playing = false;
+        this.ended = false;
+        this.index = 0;
+        
+        let txt = this.content;
+        this.refresh();
+        this.content = txt;
+
+        this.elt.textContent = "";
+        // this.init();
     }
 
 }
@@ -128,14 +146,19 @@ class TW_Manager{
     // bounded = this.bound;
 
     /**
+     * 
      * @param {{class: string|undefined, body:HTMLElement|undefined, speed: number|undefined, isContinuous:Boolean|undefined}} param
+     * @description class is the class of the elements to be targetted. Default = 'typewrite'
+     * @description body: the element which scroll is to be read incase a non continuous typewritting is present. Default = document.body
+     * @description speed: default delay interval between each character when typing. Default = 50
+     * @description isContinuous: determines if every typewritter is continuous by default. Default = false;
     */
     constructor(param){
         if(param){
             this.classname = (param.class)?param.class:this.classname;
             this.body = (param.body)?param.body:this.body;
             this.speed = (param.speed)?param.speed:this.speed;
-            this.isContinuous = param.isContinuous?param.isContinuous:true;
+            this.isContinuous = param.isContinuous?param.isContinuous:false;
         }
         this.init();
     }
@@ -150,10 +173,11 @@ class TW_Manager{
                 isContinuous: this.isContinuous
             }));
         });
-
-        document.body.addEventListener('scroll', this.scrollchecker.bind(this));
-
         this.scrollchecker();
+
+
+        this.body.addEventListener('scroll', this.scrollchecker.bind(this));
+        //this.body.addEventListener('wheel', this.scrollchecker.bind(this));
     }
 
     get resolution(){
@@ -176,13 +200,39 @@ class TW_Manager{
         }
     }
 
+    /**
+     * @description reloads typing animations for already stored elements
+     */
+    reload(){
+        this.data.forEach((element)=>{
+            element.reset();
+        })
+    }
+
+    /**
+     * @description restarts starts animation 
+     * @description trashes all registered elements and fetches elements back
+     * @description This helps incase elements' classes have been updated and you want to only get the right elements 
+     */
+    reset(){
+        this.data.forEach((element)=>{
+            element.pause();
+            element.disinit();
+        })
+        
+        delete this.data;
+        this.data = [];
+        this.init();
+    }
+
     scrollchecker(){
         let bodybound = this.bound;
 
         this.data.forEach(element => {
-            if(! (element instanceof TypeWriter)) return;
+            if(! (element instanceof TypeWriter)) throw "An instance of TypeWriter needed";
             let elt = element.elt,
             eltbound = bound(elt, 10);
+           // console.log(eltbound)
 
             if( (bodybound.y2>eltbound.y1) && (eltbound.y2 > bodybound.y1) ) {
                 if(!element.playing){
@@ -190,7 +240,16 @@ class TW_Manager{
                     element.typewrite();
                 }
             }else{
-                if(!element.isContinuous) element.pause();
+              //console.log("element not visible:", element)
+              if(element.elt.id=="ace") console.log(bodybound, eltbound)
+              if(!element.isContinuous) 
+                element.pause();
+              else{
+                if(!element.playing){
+                  element.playing = true;
+                  element.typewrite()
+                }
+              }
             }
         });
     }
