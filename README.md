@@ -10,6 +10,8 @@
 
 
 ### codeEditor.js
+
+#### [Documentary](https://khaki-parrot-419042.hostingersite.com/iamsupreme/c-editor/)
  ![Screenshot of a example of the use of the code editor](https://khaki-parrot-419042.hostingersite.com/iamsupreme/c-editor/screenshots/example.png)
 
 ### dragElement.js
