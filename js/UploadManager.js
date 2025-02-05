@@ -43,7 +43,7 @@ export default class UploadManager {
                     const chunk = fileObj.fileData.slice(fileObj.start, fileObj.start + fileObj.chunkSize);
                     const base64Chunk = chunk.split(',')[1]; // Strip off the data URL prefix
 
-                    ajaxRequest({
+                    request({
                         url: 'http://localhost:3000/upload',
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
