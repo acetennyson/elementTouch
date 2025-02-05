@@ -1,4 +1,5 @@
 import Eventbus from "./Eventbus.js";
+import request from "./request.js";
 
 export default class UploadManager {
     eventbus = new Eventbus();
