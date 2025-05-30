@@ -1,0 +1,133 @@
+2025-03-19 06:38:40 ---- Unauthorised access detected 
+2025-03-19 06:38:47 ---- Unauthorised access detected 
+2025-03-19 06:38:55 ---- Unauthorised access detected 
+2025-03-19 22:57:32 ---- 1 
+2025-03-19 23:00:05 ---- 1 
+2025-03-19 23:24:40 ---- Unable to retrieve settings 
+2025-03-19 23:24:59 ---- Unable to retrieve settings 
+2025-03-20 06:17:13 ---- referrer not set 
+2025-03-20 06:17:13 ---- unable to process get request 
+2025-03-20 09:18:55 ---- unable to process post request 
+2025-03-20 10:55:40 ---- referrer not set 
+2025-03-20 10:56:50 ---- referrer not set 
+2025-03-20 11:08:47 ---- referrer not set 
+2025-03-20 11:09:20 ---- referrer not set 
+2025-03-20 11:12:07 ---- referrer not set 
+2025-03-20 11:13:58 ---- referrer not set 
+2025-03-20 11:13:58 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND  valid = 1 LIMIT 10' at line 1 
+2025-03-20 11:14:53 ---- referrer not set 
+2025-03-20 11:14:53 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND  valid = 1 LIMIT 10' at line 1 
+2025-03-20 11:14:54 ---- referrer not set 
+2025-03-20 11:14:54 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND  valid = 1 LIMIT 10' at line 1 
+2025-03-20 11:14:54 ---- referrer not set 
+2025-03-20 11:14:54 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND  valid = 1 LIMIT 10' at line 1 
+2025-03-20 11:14:54 ---- referrer not set 
+2025-03-20 11:14:54 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND  valid = 1 LIMIT 10' at line 1 
+2025-03-20 11:15:30 ---- referrer not set 
+2025-03-20 11:17:37 ---- referrer not set 
+2025-03-20 11:17:38 ---- referrer not set 
+2025-03-20 11:17:39 ---- referrer not set 
+2025-03-20 11:17:39 ---- referrer not set 
+2025-03-20 11:21:13 ---- referrer not set 
+2025-03-20 11:21:33 ---- referrer not set 
+2025-03-20 11:25:06 ---- referrer not set 
+2025-03-20 11:25:27 ---- referrer not set 
+2025-03-20 11:25:46 ---- referrer not set 
+2025-03-20 11:26:49 ---- referrer not set 
+2025-03-20 11:27:16 ---- referrer not set 
+2025-03-20 11:27:17 ---- referrer not set 
+2025-03-20 11:27:18 ---- referrer not set 
+2025-03-20 11:27:19 ---- referrer not set 
+2025-03-20 11:27:19 ---- referrer not set 
+2025-03-20 11:27:28 ---- referrer not set 
+2025-03-20 11:28:43 ---- referrer not set 
+2025-03-20 11:28:43 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 
+2025-03-20 11:28:58 ---- referrer not set 
+2025-03-20 11:29:01 ---- referrer not set 
+2025-03-20 11:30:14 ---- referrer not set 
+2025-03-20 11:30:14 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 
+2025-03-20 11:31:21 ---- referrer not set 
+2025-03-20 11:39:51 ---- referrer not set 
+2025-03-20 11:40:27 ---- referrer not set 
+2025-03-20 11:54:09 ---- referrer not set 
+2025-03-20 11:54:26 ---- referrer not set 
+2025-03-20 11:54:37 ---- referrer not set 
+2025-03-20 11:54:37 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 
+2025-03-20 11:56:12 ---- referrer not set 
+2025-03-20 11:58:56 ---- referrer not set 
+2025-03-20 12:00:18 ---- referrer not set 
+2025-03-20 12:00:18 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1SELECT COUNT(*) as count FROM users WHERE    
+2025-03-20 12:02:09 ---- referrer not set 
+2025-03-20 12:03:16 ---- referrer not set 
+2025-03-20 12:03:48 ---- referrer not set 
+2025-03-20 12:07:03 ---- referrer not set 
+2025-03-20 12:07:04 ---- referrer not set 
+2025-03-20 12:07:05 ---- referrer not set 
+2025-03-20 12:07:05 ---- referrer not set 
+2025-03-20 12:07:05 ---- referrer not set 
+2025-03-20 12:07:05 ---- referrer not set 
+2025-03-20 12:07:17 ---- referrer not set 
+2025-03-21 15:22:39 ---- unable to process post request 
+2025-03-21 15:24:11 ---- unable to process post request 
+2025-03-22 17:46:55 ---- referrer not set 
+2025-03-25 09:45:55 ---- referrer not set 
+2025-03-25 09:45:55 ---- Please Login First 
+2025-03-26 15:16:34 ---- Please Login First 
+2025-03-26 15:16:34 ---- Please Login First 
+2025-03-26 15:16:35 ---- Please Login First 
+2025-03-26 15:16:35 ---- Please Login First 
+2025-03-26 15:16:55 ---- Please Login First 
+2025-03-26 16:29:58 ---- referrer not set 
+2025-03-26 16:29:58 ---- Please Login First 
+2025-03-27 06:54:37 ---- Please Login First 
+2025-03-27 14:05:34 ---- referrer not set 
+2025-03-27 14:05:34 ---- unable to process get request 
+2025-03-27 14:41:48 ---- referrer not set 
+2025-03-27 14:41:48 ---- unable to process get request 
+2025-03-27 14:42:35 ---- referrer not set 
+2025-03-27 14:42:35 ---- unable to process get request 
+2025-03-27 14:43:25 ---- referrer not set 
+2025-03-27 14:43:25 ---- unable to process get request 
+2025-03-27 14:44:45 ---- referrer not set 
+2025-03-27 14:44:45 ---- unable to process get request 
+2025-03-30 08:20:59 ---- referrer not set 
+2025-03-30 08:21:00 ---- unable to process get request 
+2025-03-30 11:40:42 ---- Only Clients can Book Events 
+2025-03-30 11:41:34 ---- Only Clients can Book Events 
+2025-03-30 11:42:26 ---- Only Verified accounts can Book Events 
+2025-03-30 11:43:24 ---- Only Verified accounts can Book Events 
+2025-03-30 11:43:55 ---- can't book meeting for that date 
+2025-03-30 11:48:34 ---- Booking appointments less than 120 minutes before time is prohibited 
+2025-03-30 11:48:41 ---- Booking appointments less than 120 minutes before time is prohibited 
+2025-03-30 13:53:35 ---- Too late to book for that appointment 
+2025-03-30 13:53:42 ---- Too late to book for that appointment 
+2025-03-30 13:53:53 ---- Too late to book for that appointment 
+2025-03-30 13:54:05 ---- Too late to book for that appointment 
+2025-03-30 14:04:42 ---- Booking appointments less than 120 minutes before time is prohibited 
+2025-03-30 14:06:48 ---- Booking appointments less than 120 minutes before time is prohibited 
+2025-03-30 14:10:39 ---- Time overlaps with another meeting. 
+2025-03-30 14:14:04 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-30 14:14:11 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-30 14:14:18 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-30 14:26:29 ---- Too late to book for that appointment 
+2025-03-30 14:26:39 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-30 14:27:17 ---- Time overlaps with another meeting. 
+2025-03-30 16:04:50 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'restrict = 1' at line 1SELECT * FROM events WHERE (start >= '2025-04-02 16:04:47' AND start <= '2025-04-02 16:06:47') AND (end >= '2025-04-02 16:04:47' AND end <= '2025-04-02 16:06:47') AND  restrict = 1   
+2025-03-31 11:20:39 ---- Too late to book for that appointment 
+2025-03-31 19:04:04 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-31 19:05:38 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'restrict = 1' at line 1SELECT * FROM events WHERE ( (start >= '2025-04-02 10:00:00' AND start <= '2025-04-02 10:02:00') OR (end >= '2025-04-02 10:00:00' AND end <= '2025-04-02 10:02:00') ) AND  restrict = 1   
+2025-03-31 19:06:18 ---- Time overlaps with another meeting. 
+2025-03-31 19:09:26 ---- Time overlaps with another meeting. 
+2025-03-31 19:10:40 ---- Time overlaps with another meeting. 
+2025-03-31 19:15:28 ---- Time overlaps with another meeting. 
+2025-03-31 19:17:34 ---- Booking must be within the daily time limits. (08:00:00 AND 17:00:00) 
+2025-03-31 19:25:48 ---- Time overlaps with another meeting. 
+2025-03-31 19:30:10 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%2025-04-04%  ) AND  `restrict` = 1' at line 1SELECT * FROM events WHERE ( start LIKE  %2025-04-04%  ) AND  `restrict` = 1   
+2025-03-31 19:30:19 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%2025-04-04%  ) AND  `restrict` = 1' at line 1SELECT * FROM events WHERE ( start LIKE  %2025-04-04%  ) AND  `restrict` = 1   
+2025-03-31 19:30:29 ---- You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%2025-04-04%  ) AND  `restrict` = 1' at line 1SELECT * FROM events WHERE ( start LIKE  %2025-04-04%  ) AND  `restrict` = 1   
+2025-03-31 19:31:13 ---- Time overlaps with another meeting. 
+2025-03-31 19:36:13 ---- Time overlaps with another meeting. 
+2025-04-03 15:01:51 ---- referrer not set 
+2025-04-03 15:01:51 ---- unable to process get request 
+2025-04-21 04:39:53 ---- referrer not set 
+2025-04-21 04:39:54 ---- Please Login First 

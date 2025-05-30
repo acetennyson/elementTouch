@@ -1,0 +1,27 @@
+2025-03-20 09:17:41---Registration Successful ---- {"id":"1","name":"Administrator","reviewUser":"1","manageUser":"1","manageShareholder":"1","manageTasks":"1","manageDocument":"1","manageCalendar":"1","viewMeetings":"1","manageMeetings":"1","reminderMeeting":"1","contactClients":"1","manageStaff":"1","master":"1"} 
+2025-03-20 09:17:57--- ---- [{"id":"4","name":"IAS.png","type":"file","fileType":"image\/png","parent":null,"creator":"1","size":"20518","date":"2025-03-16 23:32:01","download":"0","deleted":null,"link":"167d751615a0f6"},{"id":"5","name":"second","type":"folder","fileType":null,"parent":null,"creator":"1","size":null,"date":"2025-03-16 23:32:20","download":"0","deleted":null,"link":"167d75174b0943"}] 
+2025-03-20 09:17:59--- ---- [] 
+2025-03-20 09:18:01--- ---- [{"id":"4","name":"IAS.png","type":"file","fileType":"image\/png","parent":null,"creator":"1","size":"20518","date":"2025-03-16 23:32:01","download":"0","deleted":null,"link":"167d751615a0f6"},{"id":"5","name":"second","type":"folder","fileType":null,"parent":null,"creator":"1","size":null,"date":"2025-03-16 23:32:20","download":"0","deleted":null,"link":"167d75174b0943"}] 
+2025-03-20 09:18:02--- ---- [] 
+2025-03-20 09:18:35--- ---- [{"id":"4","name":"IAS.png","type":"file","fileType":"image\/png","parent":null,"creator":"1","size":"20518","date":"2025-03-16 23:32:01","download":"0","deleted":null,"link":"167d751615a0f6"},{"id":"5","name":"second","type":"folder","fileType":null,"parent":null,"creator":"1","size":null,"date":"2025-03-16 23:32:20","download":"0","deleted":null,"link":"167d75174b0943"}] 
+2025-03-20 09:18:40--- ---- [] 
+2025-03-20 09:18:45--- ---- [{"id":"4","name":"IAS.png","type":"file","fileType":"image\/png","parent":null,"creator":"1","size":"20518","date":"2025-03-16 23:32:01","download":"0","deleted":null,"link":"167d751615a0f6"},{"id":"5","name":"second","type":"folder","fileType":null,"parent":null,"creator":"1","size":null,"date":"2025-03-16 23:32:20","download":"0","deleted":null,"link":"167d75174b0943"}] 
+2025-03-20 10:55:40--- ---- 100 
+2025-03-20 10:56:50--- ---- 100 
+2025-03-20 11:58:56--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":null} 
+2025-03-20 12:02:09--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":null} 
+2025-03-20 12:03:48--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"1"} 
+2025-03-20 12:07:03--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:04--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:05--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:05--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:05--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:05--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"2"} 
+2025-03-20 12:07:17--- ---- {"users":[{"id":"1","accType":"staff","name":"Administrator","email":"danybeloved@gmail.com","tel":null,"Address":null,"City":null,"State":null,"Country":null,"DateCreated":"2025-02-13 15:58:04","valid":"1","userVerified":"1"}],"count":"1"} 
+2025-03-27 06:54:51---Registration Successful ---- {"id":"1","name":"Administrator","reviewUser":"1","manageUser":"1","manageShareholder":"1","manageTasks":"1","manageDocument":"1","manageCalendar":"1","viewMeetings":"1","manageMeetings":"1","reminderMeeting":"1","contactClients":"1","manageStaff":"1","master":"1"} 
+2025-03-30 11:42:08---Registration Successful ---- null 
+2025-03-30 11:43:43---Registration Successful ---- null 
+2025-03-31 19:21:42--- ---- 1 
+2025-03-31 19:26:22--- ---- 2 
+2025-03-31 19:36:05--- ---- 1 
+2025-03-31 19:36:24--- ---- 2 
