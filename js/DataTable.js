@@ -53,7 +53,7 @@ export default class DataTables {
             }
         };
 
-        if(params.cb) this.setCB(params.cb || this.parent.usersProps.cb);
+        this.setCB(params.cb || this.parent.usersProps.cb);
         
         if(!this.table || this.table.tagName.toLowerCase()!='table' ) throw `HTMLTableElement with selector(${params.selector}) not found`;
         if (this.bDestroy || this.data.length) {
