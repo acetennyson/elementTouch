@@ -1,93 +1,66 @@
-export default class FormatDate{
-  constructor() {
+export default class FormatDate {
+  static pad(num) {
+    return num.toString().padStart(2, '0');
   }
+
   /**
    * @param {Date} date 
+   * @returns {string}
    */
   static formatDateToSQL(date) {
-    const pad = num => num.toString().padStart(2, '0');
-
-    const year = date.getFullYear();
-    const month = pad(date.getMonth() + 1);
-    const day = pad(date.getDate());
-    const hours = pad(date.getHours());
-    const minutes = pad(date.getMinutes());
-    const seconds = pad(date.getSeconds());
-
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    const { pad } = FormatDate;
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
   }
+
   /**
    * @param {string} sqlDate 
+   * @returns {Date}
    */
   static sqlToJsDate(sqlDate) {
-    // SQL date format: YYYY-MM-DD hh:mm:ss
-    const [datePart, timePart] = sqlDate.split(' ');
+    const [datePart, timePart = "00:00:00"] = sqlDate.split(' ');
     const [year, month, day] = datePart.split('-').map(Number);
-    const [hours, minutes, seconds] = (timePart || "00:00:00").split(':').map(Number);
+    const [hours, minutes, seconds] = timePart.split(':').map(Number);
     return new Date(Date.UTC(year, month - 1, day, hours, minutes, seconds));
   }
 
   /**
    * @param {Date} date 
+   * @returns {string}
    */
-  static getStartofDay(date) {
-    // Set startT to the start of the day
+  static getStartOfDay(date) {
     date.setHours(0, 0, 0, 0);
     return FormatDate.formatDateToSQL(date);
   }
+
   /**
    * @param {Date} date 
+   * @returns {string}
    */
   static getEndOfDay(date) {
-    // Set endT to the end of the day
     date.setHours(23, 59, 59, 999);
-    
     return FormatDate.formatDateToSQL(date);
   }
-  
+
   /**
    * @param {string} sqlDate 
    * @param {number} timezoneOffset 
+   * @returns {[Date, string]}
    */
   static toUTCDate(sqlDate, timezoneOffset) {
-    // Convert SQL date to JavaScript Date object
     const originalDate = FormatDate.sqlToJsDate(sqlDate);
-
-    const gmtDate = new Date(originalDate.getTime() + (timezoneOffset + new Date().getTimezoneOffset()) * 60 * 1000); // note the time is set with your current timezone, so in order to get only utc, we take out your current timezone too.
-    // 2024-12-31 10:20 will be set at your timezone so if your time zone is +2 expected 2 hours in result
-    const gmtSQLDate = FormatDate.formatDateToSQL(gmtDate);
-
-    return [
-      gmtDate,
-      gmtSQLDate
-    ];
+    const offsetMinutes = timezoneOffset + new Date().getTimezoneOffset();
+    const gmtDate = new Date(originalDate.getTime() + offsetMinutes * 60000);
+    return [gmtDate, FormatDate.formatDateToSQL(gmtDate)];
   }
-  
+
   /**
    * @param {string} sqlDate 
    * @param {number} timezoneOffset 
+   * @returns {[Date, string]}
    */
   static toLocalDate(sqlDate, timezoneOffset) {
-    // Convert SQL date to JavaScript Date object
     const originalDate = FormatDate.sqlToJsDate(sqlDate);
-
-    const localDate = new Date(originalDate.getTime() + (timezoneOffset * 60 * 1000)); // 
-    const localSQLDate = FormatDate.formatDateToSQL(localDate);
-
-    return [
-      localDate,
-      localSQLDate
-    ];
+    const localDate = new Date(originalDate.getTime() + timezoneOffset * 60000);
+    return [localDate, FormatDate.formatDateToSQL(localDate)];
   }
-
 }
-
-/*
-const sqlDate = '2024-09-28 5:30:00';
-const timezoneOffset = -60; // Offset for UTC+1 timezone (Cameroon)
-const utcD = FormatDate.toUTCDate(sqlDate, timezoneOffset);
-const localD = FormatDate.toLocalDate(sqlDate, timezoneOffset);
-
-console.log('GMT SQL Date:', utcD); // Output: GMT SQL Date: 2024-09-28 15:30:00
-console.log('Local SQL Date:', localD); // Output: Local SQL Date: e.g., 2024-09-28 20:30:00 (depending on your current timezone)
-*/
