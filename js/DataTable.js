@@ -1,4 +1,6 @@
-class DataTables {
+import Eventbus from './Eventbus.js'
+
+export default class DataTables {
     /**
      * 
      * @param {*} params 
