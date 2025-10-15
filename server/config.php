@@ -20,10 +20,6 @@ date_default_timezone_set(DEFAULT_TIMEZONE);
 
 /* const DB_HOST = 'srv1509.hstgr.io',
 
-
-define("ALLOWED_REF", ['lavender-vulture-929230.hostingersite.com']);
-define("BANNED_IP", []);
-
 define("USER_INFO",  $_SESSION['user']??null);
 define("USER_AUTH", $_SESSION['permission']??null);
 
@@ -33,3 +29,4 @@ $taskName = "Task";
 $checklistName = "Checklist";
 
 $checklistitemName = "Checklist Item"; */
+
