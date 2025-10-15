@@ -19,9 +19,7 @@ date_default_timezone_set(DEFAULT_TIMEZONE);
 
 
 /* const DB_HOST = 'srv1509.hstgr.io',
-DB_USER = 'u440031443_cryout',
-DB_PASS = 'New.beloved1',
-DB_NAME = 'u440031443_crm';
+
 
 define("ALLOWED_REF", ['lavender-vulture-929230.hostingersite.com']);
 define("BANNED_IP", []);
@@ -33,4 +31,5 @@ $boardName = "WorkSpace";
 $tasklistName = "Activity";
 $taskName = "Task";
 $checklistName = "Checklist";
+
 $checklistitemName = "Checklist Item"; */
