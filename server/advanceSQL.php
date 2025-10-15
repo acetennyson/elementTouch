@@ -189,7 +189,7 @@ function advanceSelect($table, $selectable = '*', $condition = [], bool|mysqli $
     }
 
     if(!$result){
-        return [mysqli_error($conn), null];
+        return [mysqli_error($conn), null, $conn];
     }
     
     if(mysqli_num_rows($result) > 0){
@@ -197,8 +197,8 @@ function advanceSelect($table, $selectable = '*', $condition = [], bool|mysqli $
             $data[] = $d;
         }
     }
-    mysqli_close($conn);
-    return [null, $data];
+    // mysqli_close($conn);
+    return [null, $data, $conn];
 }
 
 function advanceSelect2($table, $selectable = '*', $condition = [], bool|mysqli $conn = null){
@@ -244,14 +244,17 @@ function advanceUpdate($table, $param, $condition, bool|mysqli $conn = null){
     }
 
     foreach ($param as $column => $value) {
+        $Evalue = is_string($value) ? mysqli_real_escape_string($conn, $value): $value;
         $s = "$column = ";
-        $s .= is_null($value) ? "NULL" : (is_string($value) ? "'$value'" : (string) $value);
+        $s .= is_null($value) ? "NULL" : (is_string($value) ? "'$Evalue'" : (string) $value);
         $paramClauses[] = $s;
     }
 
     foreach ($condition as $column => $value) {
+        $Evalue = is_string($value) ? mysqli_real_escape_string($conn, $value): $value;
+        // $Evalue = mysqli_real_escape_string($conn, (string) $value);
         $s = "$column ";
-        $s .= is_null($value) ? "IS NULL" : (is_string($value) ? "= '$value'" : "= $value");
+        $s .= is_null($value) ? "IS NULL" : (is_string($value) ? "= '$Evalue'" : "= $value");
         $whereClauses[] = $s;
     }
 
@@ -264,16 +267,16 @@ function advanceUpdate($table, $param, $condition, bool|mysqli $conn = null){
     try{
         $result = mysqli_query($conn, $query);
     }catch(Exception $e){
-        return [$e->getMessage(), null];
+        return [$e->getMessage(), null, $conn];
     }
 
     if(!$result){
-        return [mysqli_error($conn), null];
+        return [mysqli_error($conn), null, $conn];
     }
     
     $data = mysqli_affected_rows($conn);
-    mysqli_close($conn);
-    return [null, $data];
+    // mysqli_close($conn);
+    return [null, $data, $conn];
 }
 
 function advanceUpdate2($table, $param, $condition, bool|mysqli $conn = null){
@@ -325,6 +328,39 @@ function advanceInsert($table, $param, bool|mysqli $conn = null){
     {
         return is_null($val)?NULL:(is_string($val)?mysqli_real_escape_string($conn, $val):$val);
     }, $values);
+    $valueStr = array_map(function($val) {
+        return is_null($val)?"NULL":(is_string($val)?"'$val'":$val);
+    }, $values);
+    $valuesStr = implode(',', $valueStr);
+    
+    $query = "INSERT INTO $table ($columns) VALUES ($valuesStr) ";
+
+    try {
+        //code...
+        $result = mysqli_query($conn, $query);
+    } catch (Exception $e) {
+        return [$e->getMessage(), null, $conn];
+    }
+    if (!$result) {
+        // die(Error(2, 'Store Data'));
+        return [mysqli_error($conn), null, $conn];
+    }
+    $data = mysqli_insert_id($conn);
+    // mysqli_close($conn);
+    return [null, $data, $conn];
+}
+
+function advanceInsert2($table, $param, bool|mysqli $conn = null){
+    $conn ??= connectDB();
+
+    $table = mysqli_real_escape_string($conn, $table);
+    $columns = implode(',', array_keys($param));
+    $placeholders = implode(',', array_fill(0, count($param), '?'));
+    $values = array_values($param);
+    $values = array_map(function( $val) use ($conn)
+    {
+        return is_null($val)?NULL:(is_string($val)?mysqli_real_escape_string($conn, $val):$val);
+    }, $values);
     
     $query = "INSERT INTO $table ($columns) VALUES ($placeholders) ";
 
@@ -334,8 +370,8 @@ function advanceInsert($table, $param, bool|mysqli $conn = null){
         return [mysqli_error($conn), null];
     }
     $data = mysqli_insert_id($conn);
-    mysqli_close($conn);
-    return [null, $data];
+    // mysqli_close($conn);
+    return [null, $data, $conn];
 }
 
 function advanceDelete($table, array $condition = [], bool|mysqli $conn = null){
@@ -357,16 +393,16 @@ function advanceDelete($table, array $condition = [], bool|mysqli $conn = null){
     try{
         $result = mysqli_query($conn, $query);
     }catch(Exception $e){
-        return [$e->getMessage(), null];
+        return [$e->getMessage(), null, $conn];
     }
 
     if(!$result){
-        return [mysqli_error($conn), null];
+        return [mysqli_error($conn), null, $conn];
     }
     
     $data = mysqli_affected_rows($conn);
-    mysqli_close($conn);
-    return [null, $data];
+    // mysqli_close($conn);
+    return [null, $data, $conn];
 }
 
 function advanceDelete2($table, $condition, bool|mysqli $conn = null){
